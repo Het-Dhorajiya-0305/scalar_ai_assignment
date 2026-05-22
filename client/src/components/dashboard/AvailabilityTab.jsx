@@ -238,7 +238,7 @@ export default function AvailabilityTab() {
       Object.keys(availability).forEach((day) => {
         availability[day].forEach((slot) => {
           payload.push({
-            day_of_week: Number(day),
+            day_of_week: DAY_NAMES[Number(day)],
             start_time: slot.start,
             end_time: slot.end,
             timezone,

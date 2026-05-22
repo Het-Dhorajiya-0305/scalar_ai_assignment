@@ -85,6 +85,8 @@ const updateAvailability = async (id, data) => {
 
     const { day_of_week, start_time, end_time, timezone } = data;
 
+    console.log(day_of_week);
+
     // CHECK AVAILABILITY EXISTS
     const [existingAvailability] = await pool.query(
         `
