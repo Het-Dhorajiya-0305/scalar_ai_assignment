@@ -8,10 +8,15 @@ dotenv.config({
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
+    port: process.env.DB_PORT,
     password: process.env.DB_PASSWORD,
     database: process.env.DATABASE,
     waitForConnections: true,
-    connectionLimit: 10
+    connectionLimit: 10,
+    ssl: {
+        rejectUnauthorized: false,
+    },
+
 });
 
 const checkConnection = async () => {
